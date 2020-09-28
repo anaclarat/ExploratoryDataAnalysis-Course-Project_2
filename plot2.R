@@ -9,9 +9,10 @@ setwd('D:/DataScienceSpecialization/4-Exploratory_Data_Analysis/Week4/Assignment
 if (!file.exists('./data'))
 {dir.create('./data')}
 
-url <- 'https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip'
-download.file(url,destfile = './data/data.zip',method = 'curl')
-rm(url)
+if (!file.exists('./data/data.zip')){
+  url <- 'https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip'
+  download.file(url,destfile = './data/data.zip',method = 'curl')
+  rm(url)}
 
 #Unzip data
 if (!file.exists('./data/exdata_data_NEI_data'))
